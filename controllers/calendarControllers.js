@@ -1,5 +1,5 @@
-const { ctrlWrapper } = require("../utils/ctrlWrapper");
-const { HttpError } = require("../helpers/HttpError");
+const ctrlWrapper = require("../utils/ctrlWrapper");
+const HttpError = require("../helpers/HttpError");
 const { Event } = require("../models/eventModel");
 const moment = require("moment");
 

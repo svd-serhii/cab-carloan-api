@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const ctrl = require("../controllers/calendarControllers");
-const { validateBody } = require("../utils/validateBody");
+const validateBody = require("../utils/validateBody");
 const { isValidId } = require("../middlewares");
 const schemas = require("../utils/validation/eventValidationSchema");
 

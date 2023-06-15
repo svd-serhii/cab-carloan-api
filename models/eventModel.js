@@ -1,8 +1,8 @@
 const { Schema, model } = require("mongoose");
 
-const { handleMongooseError } = require("../utils/handleMongooseError");
+const handleMongooseError = require("../utils/handleMongooseError");
 
-const EventSchema = new Schema({
+const eventSchema = new Schema({
   name: {
     type: String,
     required: [true, "Set name of client"],
@@ -18,8 +18,8 @@ const EventSchema = new Schema({
   },
 });
 
-EventSchema.post("save", handleMongooseError);
+eventSchema.post("save", handleMongooseError);
 
-const Event = model("event", EventSchema);
+const Event = model("event", eventSchema);
 
 module.exports = { Event };
