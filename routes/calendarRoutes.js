@@ -5,9 +5,9 @@ const validateBody = require("../utils/validateBody");
 const { isValidId } = require("../middlewares");
 const schemas = require("../utils/validation/eventValidationSchema");
 
-router.get("/get-events", ctrl.getEvents);
+router.get("/", ctrl.getEvents);
 
-router.post("/create-event", validateBody(schemas.addSchema), ctrl.addEvent);
+router.post("/add", validateBody(schemas.addSchema), ctrl.addEvent);
 
 router.delete("/:id", isValidId, ctrl.removeEvent);
 
