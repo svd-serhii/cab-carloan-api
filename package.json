@@ -11,8 +11,12 @@
     "start:dev": "cross-env NODE_ENV=development nodemon ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git ",
+    "url": "git+https://github.com/svd-serhii/cab-carloan-api.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "svd-serhii",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
