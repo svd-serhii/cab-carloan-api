@@ -11,9 +11,7 @@ const addEvent = async (req, res) => {
 };
 
 const getEvents = async (req, res) => {
-  const events = await Event.find({
-    day: { $day: moment(req.query.day).toDate() },
-  });
+  const events = await Event.find();
   res.status(201).json(events);
 };
 
