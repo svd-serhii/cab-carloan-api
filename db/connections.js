@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
-const { DB_HOST } = process.env;
-
-const connectionDB = async () => {
-  mongoose.connect(DB_HOST, {
+const connectionDB = async (url) => {
+  mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

@@ -1,11 +1,11 @@
 const app = require("./app");
 const { connectionDB } = require("./db/connections");
 
-const { PORT = 3050 } = process.env;
+const { DB_HOST, PORT = 3050 } = process.env;
 
 const startServer = async () => {
   try {
-    await connectionDB();
+    await connectionDB(DB_HOST);
     console.log(`${new Date().toLocaleString()}: Database connection successful`);
     app.listen(PORT, () => {
       console.log(`${new Date().toLocaleString()}: Server running. Use our API on port: ${PORT}`);
