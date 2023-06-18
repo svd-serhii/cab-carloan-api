@@ -1,6 +1,6 @@
 const ctrlWrapper = require("../utils/ctrlWrapper");
 const HttpError = require("../helpers/HttpError");
-const { Event } = require("../models/eventModel");
+const { Event } = require("../db/models/eventModel");
 const moment = require("moment");
 
 const addEvent = async (req, res) => {

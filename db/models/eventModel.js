@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const moment = require("moment");
-const handleMongooseError = require("../utils/handleMongooseError");
+const handleMongooseError = require("../../utils/handleMongooseError");
 
 const eventSchema = new Schema({
   title: {
