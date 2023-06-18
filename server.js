@@ -1,6 +1,7 @@
+require("dotenv").config();
 const app = require("./app");
 const { connectionDB } = require("./db/connections");
-require("dotenv").config();
+
 const { PORT = 3050 } = process.env;
 
 const startServer = async () => {
