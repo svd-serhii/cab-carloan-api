@@ -45,7 +45,33 @@ const addSchema = Joi.object({
       return date.toDate();
     }),
 });
+const updateSchema = Joi.object({
+  title: Joi.string(),
+  brand: Joi.string(),
+  region: Joi.string(),
+  branch: Joi.string(),
+  credit: Joi.number(),
+  start: Joi.string()
+    .regex(dateRegex)
+    .custom((value, helpers) => {
+      const date = moment(value, "DD.MM.YYYY");
+      if (!date.isValid()) {
+        return helpers.error("string.dateInvalid");
+      }
+      return date.toDate();
+    }),
+  end: Joi.string()
+    .regex(dateRegex)
+    .custom((value, helpers) => {
+      const date = moment(value, "DD.MM.YYYY");
+      if (!date.isValid()) {
+        return helpers.error("string.dateInvalid");
+      }
+      return date.toDate();
+    }),
+});
 
 module.exports = {
   addSchema,
+  updateSchema,
 };

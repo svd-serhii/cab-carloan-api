@@ -27,8 +27,19 @@ const removeEvent = async (req, res) => {
   });
 };
 
+const updateEvent = async (req, res) => {
+  const { id } = req.params;
+  const result = await Event.findByIdAndUpdate(id);
+  if (!result) {
+    throw HttpError(404, `Event with ${id} not found`);
+  }
+
+  res.status(200).json(result);
+};
+
 module.exports = {
   addEvent: ctrlWrapper(addEvent),
   getEvents: ctrlWrapper(getEvents),
   removeEvent: ctrlWrapper(removeEvent),
+  updateEvent: ctrlWrapper(updateEvent),
 };

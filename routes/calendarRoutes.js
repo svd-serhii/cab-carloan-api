@@ -11,6 +11,6 @@ router.post("/add", validateBody(schemas.addSchema), ctrl.addEvent);
 
 router.delete("/:id", isValidId, ctrl.removeEvent);
 
-// router.put("/:id", authenticate, isValidId, validateBody(schemas.updateSchema), ctrl.updateContact);
+router.patch("/:id", isValidId, validateBody(schemas.updateSchema), ctrl.updateEvent);
 
 module.exports = router;
